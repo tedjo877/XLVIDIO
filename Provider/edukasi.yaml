@@ -1,0 +1,220 @@
+proxies:
+  - name: SG🇸🇬
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: a5b905e4-5bfc-4436-adfc-62a80dc18daf
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=43.156.181.203
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: jp🇯🇵
+    server: 104.17.3.81
+    port: 443
+    type: trojan
+    password: 3a742706-3f9c-408b-b081-bf6588216c4f
+    skip-cert-verify: true
+    sni: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /tr=proxyip.bexnxx.us.kg
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇩🇪De
+    server: 104.17.3.81
+    port: 443
+    type: trojan
+    password: 40070434-8c1e-41ae-a978-b13f2529b6ce
+    skip-cert-verify: true
+    sni: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /tr=38.180.165.29
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇩🇪DE
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: 2adf43c7-c0c2-4881-a58d-5d45ac53182f
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=38.180.165.29
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: (ID)🇮🇩
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: ae9092c2-0bd9-4eec-84c9-7fc35f7fcecd
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=35.219.15.90
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: (SG)
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: ca83224b-897a-44ab-ac84-e5c86203f46f
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=143.42.66.91
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: (ID)🇮🇩1
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: 7f927ddc-8f75-4278-a956-efbf00e11133
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=35.219.50.99
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇷🇺(RU)
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: 421c3e24-dd63-4ecf-bbcd-91f4aedb6d46
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=185.103.109.139
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇷🇺(RU) 2
+    server: 104.17.3.81
+    port: 443
+    type: trojan
+    password: 9030ea20-fd28-4c3c-a226-0f9c3b400074
+    skip-cert-verify: true
+    sni: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /tr=185.103.109.139
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇯🇵(JP)
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: f9924f89-99a8-4ceb-a8df-ae2ddb765c68
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=proxyip.bexnxx.us.kg
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇸🇬(SG) 2
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: 2b45ef65-6c73-42dd-af65-98995edd3912
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=178.128.80.43
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇮🇩(ID) 2
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: 5b1e91b2-4d3e-4481-8dcd-32ce3699a4ec
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=35.219.15.90
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇮🇩(ID) 3
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: ab77bf11-43d9-47eb-ab43-8cb5898ae088
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=35.219.50.99
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇲🇾(MY)
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: 4741a5aa-6194-4a8f-b835-bab48938368a
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=210.186.12.244
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true
+  - name: 🇮🇩(ID) 4
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: 615a1543-4888-4f1c-9147-30e3c9b1f637
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: aio.bexnxx.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=172.232.238.169
+      headers:
+        Host: aio.bexnxx.us.kg
+    udp: true

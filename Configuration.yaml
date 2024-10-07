@@ -1,0 +1,222 @@
+proxy-providers:
+  Akunid:
+    type: file
+    path: "./Akun/vidio.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: '30'
+  Akunid1:
+    type: file
+    path: "./Akun/flex.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: '30'
+  Akunid2:
+    type: file
+    path: "./Akun/edukasi.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: '30'
+  Akunid3:
+    type: file
+    path: "./Akun/ruangguru.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: '30'
+proxy-groups:
+- name: ♻️UT-WS♻️
+  type: url-test
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15'
+- name: ☢️LB☢️
+  type: load-balance
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15'
+- name: ☣️FB☣️
+  type: fallback
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15'
+- name: 💢UTRB💢
+  type: url-test
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15'
+- name: 🔰LBRB🔰
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15'
+- name: 🌐FBRB🌐
+  type: fallback
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15'
+- name: 📡UTCH📡
+  type: url-test
+  strategy: consistent-hashing
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15'
+- name: ♓LBCH♓
+  type: load-balance
+  strategy: consistent-hashing
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15'
+- name: ☸️FBCH☸️
+  type: fallback
+  strategy: consistent-hashing
+  disable-udp: false
+  use:
+  - Akunid
+  - Akunid1
+  - Akunid2
+  - Akunid3
+  url: http://www.gstatic.com/generate_204
+  interval: '30'
+  tolerance: '15' 
+tproxy-port: 7895
+redir-port: 7892
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+unified-delay: true
+external-controller: 0.0.0.0:9090
+secret: fbrn02
+bind-address: 0.0.0.0
+external-ui: ui
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 127.0.0.1:5053
+  nameserver:
+  - 1.1.1.1
+  fallback-filter:
+    geoip: false
+    ipcidr:
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 192.168.0.0/16
+    - 198.18.0.0/15
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - 224.0.0.0/4
+    - 240.0.0.0/4
+    - 255.255.255.255/32
+experimental:
+  ignore-resolve-fail: true
+ipv6: false
+tun:
+  enable: true
+  stack: system
+  mtu: 65535
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+  - tcp://any:53
+profile:
+  store-selected: true
+  store-fakeip: true
+  store-fake-ip: true
+geodata-mode: true
+geodata-loader: memconservative
+tcp-concurrent: true
+keep-alive-interval: 1800
+find-process-mode: always
+global-client-fingerprint: chrome
+rules:
+- MATCH,♻️UT-WS♻️
+rule-providers:
+  Vidio:
+    type: http
+    behavior: classical
+    path: "./Akun/vidio.yaml"
+    url: https://raw.githubusercontent.com/tedjo877/CLSAH-FREE/V1/Provider/vidio.yaml
+    interval: 86400
+  Edukasi:
+    type: http
+    behavior: classical
+    path: "./Akun/edukasi.yaml"
+    url: https://raw.githubusercontent.com/tedjo877/CLSAH-FREE/V1/Provider/edukasi.yaml
+    interval: 86400
+  Ruangguru:
+    type: http
+    behavior: classical
+    path: "./Akun/ruangguru.yaml"
+    url: https://raw.githubusercontent.com/tedjo877/CLSAH-FREE/V1/Provider/ruangguru.yaml
+    interval: 86400
+  Flex:
+    type: http
+    behavior: classical
+    path: "./Akun/flex.yaml"
+    url: https://raw.githubusercontent.com/tedjo877/CLSAH-FREE/V1/Provider/flex.yaml
+    interval: 86400
